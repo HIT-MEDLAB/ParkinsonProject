@@ -1,20 +1,20 @@
 package com.example.parkinson.model.user_models;
 
 public class Patient {
-    private String clinic;
-    private String country;
-    private Long date_of_birth;
-    private String doctor;
-    private String email;
-    private String first_name;
-    private String gender;
-    private String last_name;
-    private String mobile_phone;
-    private String token;
+    private String clinic;//לאיזה קופת חולים משוייך המטופל
+    private String country;//באיזה מדינה נולד
+    private Long date_of_birth;//תאריך הלידה של המטופל
+    private String doctor;//שם הרופא אליו הוא משוייך
+    private String email;//כתובת המייל של המטופל
+    private String first_name;//שמו הפרטי של ה מטופל
+    private String gender;//מין המטופל
+    private String last_name;//שם המשפחה של המטופל
+    private String mobile_phone;//מספר הפלאפון של המטופל
+    private String token;//המזהה של המכשיר של המטופל על מנת לקבל התראות
 
-    private Boolean hasUnansweredQuestionnaire;
+    private Boolean hasUnansweredQuestionnaire;//משתנה בוליאני האומר אם המטופל לא ענה על שאלון
 
-    private Boolean needToUpdateMedicine;
+    private Boolean needToUpdateMedicine;//משתנה בוליאני האומר אם על המטופל לעדכן את רשימת התרופות
 
     public Patient() {
     }

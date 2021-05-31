@@ -5,8 +5,8 @@ import java.util.Date;
 import java.util.List;
 
 public class Questionnaire {
-    private List<Question> questionList = new ArrayList<>();
-    private Date answeredAt;
+    private List<Question> questionList = new ArrayList<>();//רשימה של כל השאלות הקיימות בשאלון
+    private Date answeredAt;//התאריך שבו נענה השאלון
 
     public Questionnaire() {
     }

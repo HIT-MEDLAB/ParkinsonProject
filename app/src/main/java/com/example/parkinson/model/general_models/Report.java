@@ -3,10 +3,10 @@ package com.example.parkinson.model.general_models;
 import com.example.parkinson.model.enums.EStatus;
 
 public class Report {
-    private Long reportTime;
-    private EStatus status;
-    private Boolean hallucinations = false;
-    private Boolean falls = false;
+    private Long reportTime;// הזמן שבא נלקחה התרופה , ניתן לשים לב שהזמן מגיע המספר השניות וניתן להמיר אותו ל אובייקט תאריך
+    private EStatus status;// מה הסטטוס של המטופל בעת הדיווח
+    private Boolean hallucinations = false;//משתנה בוליאני שאומר האם חווה הלוקציה
+    private Boolean falls = false;//משתנה בוליאני האומר אם חווה נפילות
 
     public Report() { }
 

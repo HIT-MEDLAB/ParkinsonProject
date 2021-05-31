@@ -3,7 +3,7 @@ package com.example.parkinson.model.question_models;
 import com.example.parkinson.model.enums.EQuestionType;
 
 public class OpenQuestion extends Question {
-    private String answer;
+    private String answer;// התשובה לשאלה שהמטופל הקליד
 
     public OpenQuestion() {
         super("", null);

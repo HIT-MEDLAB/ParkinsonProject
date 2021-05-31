@@ -2,9 +2,9 @@ package com.example.parkinson.model.general_models;
 
 public class MedicineReport {
 
-    String medicineId;
-    long takenTime;
-    String medicineName;
+    String medicineId; //המזהה היחודי של התרופה שנלקחה
+    long takenTime;// הזמן שבא נלקחה התרופה , ניתן לשים לב שהזמן מגיע המספר השניות וניתן להמיר אותו לdate
+    String medicineName;//שם התרופה שנלקחה
 
     public MedicineReport() {
     }

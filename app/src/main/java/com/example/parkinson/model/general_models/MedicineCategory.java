@@ -4,8 +4,8 @@ import java.util.List;
 
 public class MedicineCategory {
 
-   String categoryName;
-   List<Medicine> medicineList;
+   String categoryName;// שם הקטוגריה
+   List<Medicine> medicineList;// רשימת התרופות שבקטוגריה
 
     public MedicineCategory() {
     }

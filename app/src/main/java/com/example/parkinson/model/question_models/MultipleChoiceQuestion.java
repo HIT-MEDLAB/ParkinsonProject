@@ -8,9 +8,9 @@ import java.util.List;
 
 public class MultipleChoiceQuestion extends Question {
     private String title;
-    private List<String> choices;
-    private List <String> answers = new ArrayList<>();
-    private EChoiceType choiceType;
+    private List<String> choices;//רשימה של כל התשובות האפשריות לשאלה
+    private List <String> answers = new ArrayList<>();//רשימה של התשובות של המטופל
+    private EChoiceType choiceType;//סוג השאלה , מרובת תשובות או בעלת בחירה יחידה
 
     public MultipleChoiceQuestion() {
         super("", null);

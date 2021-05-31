@@ -28,6 +28,9 @@ public class Time {
         this.hour = hour;
     }
 
+    /*
+    פונקצייה שמחזירה את הזמן כסטרינג מלא כמו שעון דיגטלי
+     */
     public String fullTime(){
         String hoursString;
         String minutesString;

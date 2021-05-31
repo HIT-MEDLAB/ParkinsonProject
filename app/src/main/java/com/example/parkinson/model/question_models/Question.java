@@ -3,8 +3,8 @@ package com.example.parkinson.model.question_models;
 import com.example.parkinson.model.enums.EQuestionType;
 
 public class Question {
-    private String title;
-    private EQuestionType type;
+    private String title;//הכותרת של השאלה , השאלה עצמה
+    private EQuestionType type;// סוג השאלה , פתוחה מרובת תשובות וכדומה
 
     public Question() {
     }

@@ -6,12 +6,12 @@ import android.os.Parcelable;
 import java.util.List;
 
 public class Medicine implements Parcelable {
-    private String id;
-    private String categoryId;
+    private String id;// המזהה של התרופה בדאטה בייס מאפשר גישה מהירה
+    private String categoryId;// המזהה של הקטוגריה בדאטה בייס מאפשר גישה מהירה
 
-    private String name;
-    private Double dosage;
-    List<Time> hoursArr;
+    private String name;// שם התרופה
+    private Double dosage;// כמות השימוש של נטילת התרופה
+    List<Time> hoursArr;// מערך של שעות נטילת התרופות
 
     public Medicine(){
 
