@@ -25,12 +25,6 @@ public class ReportService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-//        Intent reportActivity = new Intent(this, NotificationActivity.class);
-//        reportActivity.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//        reportActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//        //App.setCurrentActivityIntent(currentActivityIntent);
-//        //setCurrentActivityIntent(currentActivityIntent);
-//        startActivity(reportActivity);
 
         if (FirebaseAuth.getInstance().getCurrentUser() == null) {
             return super.onStartCommand(intent, flags, startId);
@@ -41,7 +35,6 @@ public class ReportService extends Service {
         NotificationManager notificationManager;
         Intent reportActivity = new Intent(this, NotificationActivity.class);
         reportActivity.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        //reportActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 100, reportActivity, PendingIntent.FLAG_UPDATE_CURRENT);
 
         builder = new NotificationCompat.Builder(this, "CHANNEL_ID")
@@ -58,7 +51,6 @@ public class ReportService extends Service {
 
         notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         notificationManager.notify(10, builder.build());
-        //startForeground(10,builder.build() );
         return super.onStartCommand(intent, flags, startId);
     }
 

@@ -12,7 +12,6 @@ public class ReportBroadcast extends BroadcastReceiver {
         Intent reportActivity = new Intent(context, NotificationActivity.class);
         reportActivity.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         reportActivity.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-       // App.setCurrentActivityIntent(currentActivityIntent);
         context.startActivity(reportActivity);
     }
 }

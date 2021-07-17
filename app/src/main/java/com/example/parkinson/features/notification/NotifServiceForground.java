@@ -55,30 +55,6 @@ public class NotifServiceForground extends Service {
 
         createNotifacations();
 
-
-//        createNotificationChannel();
-//        NotificationCompat.Builder builder;
-//        NotificationManager notificationManager;
-//        Intent reportActivity = new Intent(this, NotificationActivity.class);
-//        //reportActivity.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//        //reportActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//        PendingIntent pendingIntent = PendingIntent.getActivity(this, 100, reportActivity, PendingIntent.FLAG_UPDATE_CURRENT);
-//
-//        builder = new NotificationCompat.Builder(this, "CHANNEL_ID")
-//                .setSmallIcon(R.drawable.ic_add)
-//                .setContentTitle("אפליקציית פרקינסון")
-//                .setContentText("לחץ עליי לדיווח")
-//                .setContentIntent(pendingIntent)
-//                .setFullScreenIntent(pendingIntent, false)
-//                .setPriority(NotificationCompat.PRIORITY_LOW)
-////                .setDefaults(NotificationCompat.DEFAULT_ALL)
-//                .setColor(Color.BLACK)
-//                .setOngoing(true);
-//
-//
-//        notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-//        startForeground(10,builder.build() );
-//       // notificationManager.notify(1, builder.build());
         return super.onStartCommand(intent, flags, startId);
     }
 
@@ -98,7 +74,6 @@ public class NotifServiceForground extends Service {
         calendar2.set(Calendar.MINUTE,minutes);
 
         AlarmManager alarm2 = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        //alarm.setInexactRepeating(AlarmManager.RTC_WAKEUP, 3000, AlarmManager.INTERVAL_DAY, pintent);
         alarm2.setRepeating(AlarmManager.RTC_WAKEUP, calendar2.getTimeInMillis(),
                 1000 * 60 *30, medicineIntentPintent);
     }
@@ -113,7 +88,6 @@ public class NotifServiceForground extends Service {
         calendar.set(Calendar.MINUTE,0);
 
         AlarmManager alarm = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        //alarm.setInexactRepeating(AlarmManager.RTC_WAKEUP, 3000, AlarmManager.INTERVAL_DAY, pintent);
         alarm.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
                 1000 * 60 * 60, pintent);
     }
@@ -123,8 +97,6 @@ public class NotifServiceForground extends Service {
         NotificationCompat.Builder builder;
         NotificationManager notificationManager;
         Intent reportActivity = new Intent(this, NotificationActivity.class);
-        //reportActivity.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        //reportActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 100, reportActivity, PendingIntent.FLAG_UPDATE_CURRENT);
 
         builder = new NotificationCompat.Builder(this, "CHANNEL_ID")
@@ -134,14 +106,12 @@ public class NotifServiceForground extends Service {
                 .setContentIntent(pendingIntent)
                 .setFullScreenIntent(pendingIntent, false)
                 .setPriority(NotificationCompat.PRIORITY_LOW)
-//                .setDefaults(NotificationCompat.DEFAULT_ALL)
                 .setColor(Color.BLACK)
                 .setOngoing(true);
 
 
         notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         startForeground(10,builder.build() );
-        // notificationManager.notify(1, builder.build());
     }
 
     private void createNotificationChannel() {

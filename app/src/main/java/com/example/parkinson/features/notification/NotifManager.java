@@ -31,52 +31,6 @@ public class NotifManager {
         return currentUser != null;
     }
 
-    enum EnotifId {
-        H5(0),
-        H5_30(1),
-        H6(3),
-        H6_30(4),
-        H7(5),
-        H7_30(6),
-        H8(7),
-        H8_30(8),
-        H9(9),
-        H9_30(10),
-        H10(11),
-        H10_30(12),
-        Hg11(13),
-        H11_30(14),
-        H12(15),
-        H12_30(16),
-        H13(17),
-        H13_30(18),
-        H14(19),
-        H14_30(20),
-        H15(21),
-        H15_30(22),
-        H16(23),
-        H16_30(24),
-        H17(25),
-        H17_30(26),
-        H18(27),
-        H18_30(28),
-        H19(29),
-        H19_30(30),
-        H20(31),
-        H20_30(32),
-        H21(33),
-        H21_30(34),
-        H22(35),
-        H22_30(36),
-        H23(37),
-        H23_30(38);
-
-        int id;
-        EnotifId(int i) {
-            this.id = i;
-        }
-    }
-
     NotifMangerInteface listner;
     DatabaseReference userTable = FirebaseDatabase.getInstance().getReference("Patients");
     FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
