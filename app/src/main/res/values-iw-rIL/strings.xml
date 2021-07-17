@@ -1,9 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">ParkinsonProject</string>
-    <string name="login">כניסה</string>
+    <string name="login">התחברות</string>
     <string name="password">סיסמה</string>
     <string name="user_name">שם משתמש</string>
     <string name="login_screen">מסך התחברות</string>
-    <string name="one_and_a_half"> <sup>1</sup>/<sub>2</sub>     1      כדור  </string>
+    <string name="welcome">ברוך הבא!</string>
+    <string name="new_messages">הודעות חדשות</string>
+    <string name="new_report">דיווח חדש</string>
+    <string name="logout">התנתק</string>
+    <string name="questions">שאלון</string>
+    <string name="questionnaire">אפיון המחלה</string>
+    <string name="medicine">תרופות</string>
+    <string name="Dyskinesia">דסקנזיה</string>
+    <string name="Hallucinations">הזיות</string>
+    <string name="Falls">נפילות</string>
+    <string name="send_report">שלח דיווח</string>
+    <string name="choose_category">בחר קטגוריה</string>
+    <string name="medication_list">התרופות שלי</string>
+    <string name="my_medications">התרופות שלי</string>
+    <string name="End">סיום</string>
+    <string name="previous">הקודם</string>
+    <string name="next">הבא</string>
+    <string name="times_a_day">כמה פעמים ביום אתה נוטל את התרופה?</string>
+    <string name="choose_dosage">בחר את מינון התרופה</string>
+    <string name="delete">מחיקה</string>
+    <string name="save">שמירה</string>
+    <string name="empty_medication_list">רשימת התרופות ריקה</string>
+    <string name="one_time_">פעם אחת ביום</string>
+    <string name="times_a_dat"> פעמים ביום</string>
+    <string name="one_quarter">רבע כדור</string>
+    <string name="half_a_pill">חצי כדור</string>
+    <string name="Three_quarters">שלושת רבעי כדור</string>
+    <string name="one_pill">כדור בודד</string>
+    <string name="one_and_a_quarter">כדור ורבע</string>
+    <string name="one_and_a_half">כדור וחצי</string>
+    <string name="one_and_three_quarters">כדור ושלושת רבעי</string>
+    <string name="two_pills">שני כדורים</string>
+    <string name="add_new_medication">הוסף תרופה חדשה</string>
+    <string name="no_messages">No new messages</string>
+    <string name="new_questionnaire">קיים שאלון חדש המחכה למענה</string>
+    <string name="fill_medications">יש למלא רשימת תרופות</string>
 </resources>

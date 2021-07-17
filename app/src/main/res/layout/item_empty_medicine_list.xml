@@ -23,7 +23,7 @@
             android:textSize="27dp"
             android:padding="23dp"
             android:textColor="@color/cool_grey"
-            android:text="רשימת התרופות ריקה"/>
+            android:text="@string/empty_medication_list"/>
 
     </LinearLayout>
 

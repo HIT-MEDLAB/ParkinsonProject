@@ -51,7 +51,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text= "בחר את מינון התרופה"
+        android:text= "@string/choose_dosage"
         style="@style/SemiBold17Black"
         android:paddingTop="10dp"
         android:paddingHorizontal="23dp"
@@ -72,7 +72,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text= "כמה פעמים ביום אתה נוטל את התרופה?"
+        android:text= "@string/times_a_day"
         style="@style/SemiBold17Black"
         android:paddingHorizontal="23dp"
         android:layout_marginTop="40dp"
@@ -151,7 +151,7 @@
                 android:gravity="end|center"
                 android:paddingVertical="15dp"
                 android:paddingHorizontal="40dp"
-                android:text="מחיקה" />
+                android:text="@string/delete" />
 
         </androidx.cardview.widget.CardView>
 
@@ -176,7 +176,7 @@
                 android:gravity="end|center"
                 android:paddingVertical="15dp"
                 android:paddingHorizontal="40dp"
-                android:text="שמירה" />
+                android:text="@string/save" />
 
         </androidx.cardview.widget.CardView>
     </FrameLayout>

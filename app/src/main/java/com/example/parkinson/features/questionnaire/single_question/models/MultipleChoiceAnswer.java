@@ -3,6 +3,7 @@ package com.example.parkinson.features.questionnaire.single_question.models;
 import com.example.parkinson.model.enums.EChoiceType;
 import com.example.parkinson.model.enums.EQuestionType;
 
+/** UI model for MultipleChoiceAnswer - used by QuestionBinderMultipleChoiceAnswer Binder **/
 public class MultipleChoiceAnswer {
     private String answer;
     private Boolean isSelected;

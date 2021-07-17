@@ -1,7 +1,11 @@
 package com.example.parkinson.features.main;
 
+import android.content.Context;
+
 import androidx.lifecycle.MutableLiveData;
 import androidx.navigation.NavDirections;
+
+import com.example.parkinson.R;
 import com.example.parkinson.data.DataRepository;
 import com.example.parkinson.data.UserRepository;
 import com.example.parkinson.di.MainScope;
@@ -68,14 +72,16 @@ public class MainViewModel implements UserRepository.UpdateUserListener {
         patientEvent.postValue(patientDetails);
         List<String> messages = new ArrayList<>();
         if (patientDetails.getHasUnansweredQuestionnaire()) {
-            messages.add("קיים שאלון חדש המחכה למענה");
+            messages.add("UnansweredQuestionnaire");
         }
         if (patientDetails.getNeedToUpdateMedicine()) {
-            messages.add("יש למלא רשימת תרופות");
+            messages.add("NeedToUpdateMedicine");
         }
         if (!patientDetails.getNeedToUpdateMedicine() && !patientDetails.getHasUnansweredQuestionnaire()) {
-            messages.add("אין הודעות חדשות");
+            messages.add("NoNewMessages");
         }
+
+
         messagesData.postValue(messages);
     }
 

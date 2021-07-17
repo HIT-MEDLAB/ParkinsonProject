@@ -115,14 +115,14 @@ public class SingleMedicineFragment extends Fragment {
 
     private void initDosageSpinner(Double selectedDosage) {
         HashMap<Double, String> dosagesHash = new HashMap<>();
-        dosagesHash.put(0.25, "רבע כדור");
-        dosagesHash.put(0.50,"חצי כדור");
-        dosagesHash.put(0.75, "שלושת רבעי כדור");
-        dosagesHash.put(1.00, "כדור בודד");
-        dosagesHash.put(1.25, "כדור ורבע");
-        dosagesHash.put(1.50, "כדור וחצי");
-        dosagesHash.put(1.75, "כדור ושלושת רבעי");
-        dosagesHash.put(2.00, "שני כדורים");
+        dosagesHash.put(0.25, getString(R.string.one_quarter));
+        dosagesHash.put(0.50,getString(R.string.half_a_pill));
+        dosagesHash.put(0.75, getString(R.string.Three_quarters));
+        dosagesHash.put(1.00, getString(R.string.one_pill));
+        dosagesHash.put(1.25, getString(R.string.one_and_a_quarter));
+        dosagesHash.put(1.50, getString(R.string.one_and_a_half));
+        dosagesHash.put(1.75, getString(R.string.one_and_three_quarters));
+        dosagesHash.put(2.00, getString(R.string.two_pills));
 
         final Spinner dosageSpinner = (Spinner) getView().findViewById(R.id.singleMedicineFragSpinner);
         List<String> dosageArr= new ArrayList <>();
@@ -135,7 +135,7 @@ public class SingleMedicineFragment extends Fragment {
         dosageArr.add(dosagesHash.get(1.75));
         dosageArr.add(dosagesHash.get(2.00));
         if(selectedDosage == null || selectedDosage == 0.0){
-            dosageArr.add("בחר מינון");
+            dosageArr.add(getString(R.string.choose_dosage));
         } else {
             dosageArr.add(dosagesHash.get(selectedDosage));
         }

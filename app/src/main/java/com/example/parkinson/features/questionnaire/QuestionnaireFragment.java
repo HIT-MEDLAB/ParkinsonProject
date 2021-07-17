@@ -24,6 +24,7 @@ import com.example.parkinson.model.question_models.Questionnaire;
 
 import javax.inject.Inject;
 
+/**  main QuestionnaireFragment - holds the ViewPager **/
 public class QuestionnaireFragment extends Fragment {
 
     @Inject
@@ -61,6 +62,7 @@ public class QuestionnaireFragment extends Fragment {
         questionnaireViewModel.init(isNewQuestionnaire);
     }
 
+    /** init all views in fragment **/
     private void initViews(View view){
         exitBtn = view.findViewById(R.id.questionnaireExitBtn);
         backBtn = view.findViewById(R.id.questionnaireBackBtn);
@@ -69,6 +71,8 @@ public class QuestionnaireFragment extends Fragment {
         viewPager = view.findViewById(R.id.questionnaireFragViewPager);
     }
 
+
+    /** init all UI configurations and click listeners in fragment **/
     private void initUi() {
         exitBtn.setOnClickListener(v->{
             getActivity().onBackPressed();
@@ -110,6 +114,7 @@ public class QuestionnaireFragment extends Fragment {
 
     }
 
+    /** validating the next button state - if enabled or not **/
     private void validateNextBtnState(int position){
         Question question = questionnaireViewModel.getDataByPosition(position);
         if(question != null){
@@ -121,6 +126,8 @@ public class QuestionnaireFragment extends Fragment {
         }
     }
 
+
+    /** init all observers in fragment **/
     private void initObservers() {
         questionnaireViewModel.questionnaireDataEvent.observe(getViewLifecycleOwner(), questionnaire -> {
             if (questionnaire != null) {
@@ -136,6 +143,7 @@ public class QuestionnaireFragment extends Fragment {
         });
     }
 
+    /** updating UI for next button state - if enabled or not **/
     public void handleNextBtnState(Boolean isEnabled){
         nextBtn.setEnabled(isEnabled);
         finishBtn.setEnabled(isEnabled);
@@ -143,6 +151,7 @@ public class QuestionnaireFragment extends Fragment {
         getView().findViewById(R.id.questionnaireFinishBtnTv).setEnabled(isEnabled);
     }
 
+    /** Called on next button click - goes to next page in viewPager **/
     public void onNextPressed() {
         if (viewPager.getCurrentItem() < pageNumber) {
             // Allow next press only if the user is currently looking at the last page
@@ -150,6 +159,7 @@ public class QuestionnaireFragment extends Fragment {
         }
     }
 
+    /** Called on back button click - goes to previous page in viewPager **/
     public void onBackPressed() {
         if (viewPager.getCurrentItem() == 0) {
             // If the user is currently looking at the first step, allow the system to handle the

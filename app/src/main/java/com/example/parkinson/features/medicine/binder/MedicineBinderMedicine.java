@@ -39,13 +39,13 @@ public class MedicineBinderMedicine extends ItemBinder<Medicine, MedicineBinderM
             listener.onMedicineClick(item);
         });
 
-        holder.dosage.setText(item.dosageString() + ", ");
+        holder.dosage.setText(item.dosageString(holder.itemView.getContext()) + ", ");
 
 
         if (item.getHoursArr().size() == 1) {
-            holder.dosage.setText(holder.dosage.getText() + "פעם אחת ביום");
+            holder.dosage.setText(holder.dosage.getText() + holder.itemView.getContext().getString(R.string.one_time_));
         } else {
-            holder.dosage.setText(holder.dosage.getText() + "" + item.getHoursArr().size() + " פעמים ביום");
+            holder.dosage.setText(holder.dosage.getText() + "" + item.getHoursArr().size() + holder.itemView.getContext().getString(R.string.times_a_dat));
         }
     }
 

@@ -38,7 +38,7 @@
                 android:paddingHorizontal="23dp"
                 android:paddingVertical="17dp"
                 android:paddingEnd="50dp"
-                android:text="התרופות שלי"
+                android:text="@string/my_medications"
                 android:textSize="30sp" />
 
         </FrameLayout>
@@ -76,7 +76,7 @@
                 android:gravity="center"
                 android:paddingHorizontal="30dp"
                 android:paddingVertical="20dp"
-                android:text="הוסף תרופה חדשה" />
+                android:text="@string/add_new_medication" />
 
         </androidx.cardview.widget.CardView>
 

@@ -1,5 +1,6 @@
 package com.example.parkinson.features.questionnaire.single_question.models;
 
+/** UI model for MultipleChoiceAnswer - used by QuestionBinderSingleChoiceAnswer Binder **/
 public class SingleChoiceAnswer {
     private String answer;
     private Boolean isSelected;

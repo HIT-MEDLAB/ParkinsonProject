@@ -1,5 +1,6 @@
 package com.example.parkinson.features.questionnaire.single_question.models;
 
+/** UI model for MultipleChoiceAnswer - used by QuestionBinderOpenAnswer Binder **/
 public class OpenAnswer {
     String answer;
 

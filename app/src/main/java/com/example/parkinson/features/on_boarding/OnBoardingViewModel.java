@@ -12,9 +12,12 @@ public class OnBoardingViewModel {
     private final UserRepository userRepository;
 
     MutableLiveData<NavigationEvent> navigationEvent;
+    /** enum for all navigation actions in activity
+     */
     enum NavigationEvent{
         OPEN_ON_MAIN_ACTIVITY
     }
+
     // @Inject tells Dagger how to create instances of MainViewModel
     @Inject
     public OnBoardingViewModel(UserRepository userRepository) {
@@ -22,6 +25,7 @@ public class OnBoardingViewModel {
         navigationEvent = new MutableLiveData<>();
     }
 
+    /** opens the main activity **/
     public void openMainActivity() {
         navigationEvent.postValue(NavigationEvent.OPEN_ON_MAIN_ACTIVITY);
     }

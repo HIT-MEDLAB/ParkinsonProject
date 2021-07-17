@@ -1,7 +1,10 @@
 package com.example.parkinson.model.general_models;
 
+import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import com.example.parkinson.R;
 
 import java.util.List;
 
@@ -96,23 +99,23 @@ public class Medicine implements Parcelable {
         this.hoursArr = hoursArr;
     }
 
-    public String dosageString(){
+    public String dosageString(Context context){
         if (dosage == 0.25) {
-            return "רבע כדור";
+            return context.getString(R.string.one_quarter);
         } else if (dosage == 0.50) {
-            return "חצי כדור";
+            return context.getString(R.string.half_a_pill);
         } else if (dosage == 0.75) {
-            return "שלושת רבעי כדור";
+            return context.getString(R.string.Three_quarters);
         } else if (dosage == 1.00) {
-            return "כדור בודד";
+            return context.getString(R.string.one_pill);
         } else if (dosage == 1.25) {
-            return "כדור ורבע";
+            return context.getString(R.string.one_and_a_quarter);
         } else if (dosage == 1.50) {
-            return "כדור וחצי";
+            return context.getString(R.string.one_and_a_half);
         } else if (dosage == 1.75) {
-            return "כדור ושלושת רבעי";
+            return context.getString(R.string.one_and_three_quarters);
         } else if (dosage == 2.00) {
-            return "שני כדורים";
+            return context.getString(R.string.two_pills);
         }
         return "";
     }

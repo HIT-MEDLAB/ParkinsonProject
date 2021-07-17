@@ -1,6 +1,7 @@
 package com.example.parkinson.features.main.adapters;
 
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,7 +49,14 @@ public class MessagesListAdapter extends RecyclerView.Adapter<MessagesListAdapte
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         String message = messages.get(position);
-        holder.message.setText(message);
+        Context context = holder.itemView.getContext();
+        if(message.equals("UnansweredQuestionnaire")){
+            holder.message.setText(context.getString(R.string.new_questionnaire));
+        } else if(message.equals("NeedToUpdateMedicine")){
+            holder.message.setText((context.getString(R.string.fill_medications)));
+        } else {
+            holder.message.setText((context.getString(R.string.no_messages)));
+        }
     }
 
 

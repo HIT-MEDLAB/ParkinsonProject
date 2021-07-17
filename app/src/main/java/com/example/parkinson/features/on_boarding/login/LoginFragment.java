@@ -37,6 +37,7 @@ public class LoginFragment extends Fragment {
     @Inject
     OnBoardingViewModel onBoardingViewModel;
 
+
     EditText userName;
     EditText password;
     TextView login;
@@ -59,6 +60,7 @@ public class LoginFragment extends Fragment {
         initObservers();
     }
 
+    /** init all UI configurations and click listeners in fragment **/
     private void initUi(View view) {
         userName = view.findViewById(R.id.loginFragUserName);
         password = view.findViewById(R.id.loginFragPassword);
@@ -94,6 +96,7 @@ public class LoginFragment extends Fragment {
         });
     }
 
+    /** init all observers in fragment **/
     private void initObservers() {
         loginViewModel.nextButtonState.observe(getViewLifecycleOwner(), new Observer<LoginViewModel.NextButtonState>() {
             @Override

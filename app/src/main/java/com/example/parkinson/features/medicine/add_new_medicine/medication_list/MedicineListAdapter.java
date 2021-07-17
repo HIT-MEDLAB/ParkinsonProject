@@ -59,7 +59,7 @@ public class MedicineListAdapter extends RecyclerView.Adapter<MedicineListAdapte
             listener.onMedicineClick(medicine);
         });
 
-        holder.dosage.setText(medicine.dosageString());
+        holder.dosage.setText(medicine.dosageString(holder.itemView.getContext()));
 
 
         if (medicine.getDosage() > 0) {

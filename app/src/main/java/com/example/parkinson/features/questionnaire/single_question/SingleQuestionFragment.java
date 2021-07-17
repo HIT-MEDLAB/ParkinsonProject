@@ -24,6 +24,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+/**  Single page fragment in ViewPager - contains by QuestionnaireFragment**/
 public class SingleQuestionFragment extends Fragment {
 
     @Inject
@@ -55,11 +56,13 @@ public class SingleQuestionFragment extends Fragment {
         initUi();
     }
 
+    /** init all views in fragment **/
     private void initViews(View view) {
         recyclerView = view.findViewById(R.id.singleQueFragQueRecycler);
         question = view.findViewById(R.id.singleQueFragQueTitle);
     }
 
+    /** init all UI configurations and click listeners in fragment **/
     private void initUi() {
         adapter = new SingleQuestionMainAdapter(new SingleQuestionMainAdapterListener() {
             @Override
@@ -81,6 +84,7 @@ public class SingleQuestionFragment extends Fragment {
     }
 
 
+    /** handling the question data by type and passing it to adapter accordingly **/
     private void handleQuestionData(Question question){
         if(question != null){
             this.question.setText(question.getTitle());

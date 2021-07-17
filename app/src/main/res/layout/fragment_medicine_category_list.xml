@@ -38,7 +38,7 @@
                 android:paddingHorizontal="23dp"
                 android:paddingVertical="17dp"
                 android:paddingEnd="50dp"
-                android:text="בחר קטגוריה"
+                android:text="@string/choose_category"
                 android:textSize="30sp" />
 
         </FrameLayout>

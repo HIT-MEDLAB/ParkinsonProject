@@ -13,6 +13,8 @@ public class SplashViewModel implements UserRepository.InitUserListener {
     private final UserRepository userRepository;
     private final MessagingManager messagingManager;
 
+    /** enum for all navigation actions in activity
+     */
     public enum NavigationEvent{
         OPEN_ON_BOARDING_ACTIVITY,
         OPEN_MAIN_ACTIVITY
@@ -32,6 +34,10 @@ public class SplashViewModel implements UserRepository.InitUserListener {
         fetchUser();
     }
 
+    /** fetching the currently saved user
+     * if user exist login
+     * if use null - navigate to on boarding activity
+     */
     private void fetchUser(){
         if(userRepository.getCurrentUser() == null){
             navigationEvent.postValue(NavigationEvent.OPEN_ON_BOARDING_ACTIVITY);
@@ -40,6 +46,9 @@ public class SplashViewModel implements UserRepository.InitUserListener {
         }
     }
 
+    /** Listener for login completion
+     *  We don't what the main activity to start before we have the patient entity
+     *  **/
     @Override
     public void finishedLoadingUser() {
         messagingManager.refreshPushNotificationToken();

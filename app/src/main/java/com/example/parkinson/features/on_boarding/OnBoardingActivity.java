@@ -35,6 +35,7 @@ public class OnBoardingActivity extends AppCompatActivity {
         initObservers();
     }
 
+    /** init all observers in activity **/
     private void initObservers() {
         onBoardingViewModel.navigationEvent.observe(this, new Observer<OnBoardingViewModel.NavigationEvent>() {
             @Override
@@ -49,6 +50,7 @@ public class OnBoardingActivity extends AppCompatActivity {
 
     }
 
+    /** opens the main activity **/
     public void openMainActivity() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);

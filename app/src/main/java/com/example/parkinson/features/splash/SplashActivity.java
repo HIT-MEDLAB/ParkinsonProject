@@ -32,6 +32,7 @@ public class SplashActivity extends AppCompatActivity {
         initObservers();
     }
 
+    /** init all observers in activity **/
     private void initObservers() {
         splashViewModel.navigationEvent.observe(this, new Observer<SplashViewModel.NavigationEvent>() {
             @Override
@@ -48,6 +49,7 @@ public class SplashActivity extends AppCompatActivity {
         });
     }
 
+    /** opens the main activity **/
     private void openMainActivity() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
@@ -56,6 +58,7 @@ public class SplashActivity extends AppCompatActivity {
         finish();
     }
 
+    /** opens the onBoarding activity **/
     private void openOnBoardingActivity() {
         Intent intent = new Intent(this, OnBoardingActivity.class);
         startActivity(intent);
