@@ -1,5 +1,6 @@
 package com.example.parkinson.features.notification;
 
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -18,7 +19,7 @@ import javax.inject.Inject;
 
 public class NotificationActivity extends AppCompatActivity {
     public ApplicationComponent applicationComponent;
-
+    private NotificationManager notifManger;
     EStatus chosenStatus;
 
     @Inject
@@ -33,8 +34,13 @@ public class NotificationActivity extends AppCompatActivity {
         ((ParkinsonApplication) getApplicationContext()).appComponent.inject(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_notification);
-
+        cancelReportNotifaction();
         initUi();
+    }
+
+    private void cancelReportNotifaction() {
+        notifManger = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        notifManger.cancel(11);
     }
 
     private void initUi() {
@@ -87,8 +93,6 @@ public class NotificationActivity extends AppCompatActivity {
                 notificationViewModel.updateReport(EStatus.Dyskinesia, isHallucinations.isChecked(), isFalls.isChecked());
                 break;
         }
-        Intent intentService = new Intent(this, NotifServiceForground.class);
-        startService(intentService);
         onBackPressed();
     }
 
