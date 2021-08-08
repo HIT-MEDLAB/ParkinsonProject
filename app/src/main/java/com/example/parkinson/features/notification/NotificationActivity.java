@@ -25,9 +25,9 @@ public class NotificationActivity extends AppCompatActivity {
     @Inject
     NotificationViewModel notificationViewModel;
 
-    RadioButton onnBtn, offBtn, dyskinesiaBtn;
+    RadioButton onnBtn, offBtn;
     TextView reportBtn;
-    CheckBox isHallucinations, isFalls;
+    CheckBox isHallucinations, isFalls, isDyskinesia;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -51,7 +51,6 @@ public class NotificationActivity extends AppCompatActivity {
         reportBtn = findViewById(R.id.notificationReportBtn);
         offBtn = findViewById(R.id.notificationOffBtn);
         onnBtn = findViewById(R.id.notificationOnBtn);
-        dyskinesiaBtn = findViewById(R.id.notificationDyskinesiaBtn);
 
         RadioGroup radioGroup = findViewById(R.id.reportRG);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -61,8 +60,6 @@ public class NotificationActivity extends AppCompatActivity {
                     chosenStatus = EStatus.On;
                 } else if (checkedId == offBtn.getId()) {
                     chosenStatus = EStatus.Off;
-                } else if (checkedId == dyskinesiaBtn.getId()) {
-                    chosenStatus = EStatus.Dyskinesia;
                 }
             }
         });
@@ -76,6 +73,7 @@ public class NotificationActivity extends AppCompatActivity {
 
         isHallucinations = findViewById(R.id.notificationHallucinationsBtn);
         isFalls = findViewById(R.id.notificationFallsBtn);
+        isDyskinesia = findViewById(R.id.notificationDyskinesiaBtn);
     }
 
     private void reportToServer() {
@@ -84,13 +82,10 @@ public class NotificationActivity extends AppCompatActivity {
 
         switch (chosenStatus) {
             case On:
-                notificationViewModel.updateReport(EStatus.On, isHallucinations.isChecked(), isFalls.isChecked());
+                notificationViewModel.updateReport(EStatus.On,isDyskinesia.isChecked(), isHallucinations.isChecked(), isFalls.isChecked());
                 break;
             case Off:
-                notificationViewModel.updateReport(EStatus.Off, isHallucinations.isChecked(), isFalls.isChecked());
-                break;
-            case Dyskinesia:
-                notificationViewModel.updateReport(EStatus.Dyskinesia, isHallucinations.isChecked(), isFalls.isChecked());
+                notificationViewModel.updateReport(EStatus.Off, isDyskinesia.isChecked(), isHallucinations.isChecked(), isFalls.isChecked());
                 break;
         }
         onBackPressed();

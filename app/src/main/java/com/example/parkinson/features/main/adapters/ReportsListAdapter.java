@@ -53,12 +53,6 @@ public class ReportsListAdapter extends RecyclerView.Adapter<ReportsListAdapter.
             case Off:
                 holder.report.setText("דווח: OFF");
                 break;
-            case Dyskinesia:
-                holder.report.setText("דווח: דסקנזיה");
-                break;
-            case Hallucination:
-                holder.report.setText("דווח: הזיות");
-                break;
         }
         String dateString = new SimpleDateFormat("hh:mm", Locale.US).format(new Date(report.getReportTime()));
         holder.time.setText( "שעת דיווח: " + dateString);
