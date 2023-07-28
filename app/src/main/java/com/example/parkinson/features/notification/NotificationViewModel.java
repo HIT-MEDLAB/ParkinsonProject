@@ -18,8 +18,8 @@ public class NotificationViewModel {
         this.dataRepository = dataRepository;
     }
 
-    public void updateReport(EStatus status, boolean isHallucinations, boolean isFalls) {
-        Report report = new Report(Calendar.getInstance().getTime().getTime(),status,isHallucinations, isFalls);
+    public void updateReport(EStatus status,boolean isDyskinesia, boolean isHallucinations, boolean isFalls) {
+        Report report = new Report(Calendar.getInstance().getTime().getTime(), status,isDyskinesia, isHallucinations, isFalls);
         userRepository.postReport(report);
     }
 }

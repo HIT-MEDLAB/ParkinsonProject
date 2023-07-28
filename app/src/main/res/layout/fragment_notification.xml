@@ -47,8 +47,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
+                    android:layoutDirection="ltr"
                     android:orientation="horizontal"
-                    android:weightSum="3">
+                    android:weightSum="2">
 
                     <RadioButton
                         android:id="@+id/notificationOnBtn"
@@ -56,7 +57,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="5dp"
-                        android:layout_weight="0.9"
+                        android:layout_weight="1"
                         android:background="@drawable/shape_light_green_stroke"
                         android:button="@null"
                         android:gravity="center"
@@ -64,26 +65,12 @@
                         android:text="On" />
 
                     <RadioButton
-                        android:id="@+id/notificationDyskinesiaBtn"
-                        style="@style/SemiBold17Black"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1.2"
-                        android:background="@drawable/shape_light_green_stroke"
-                        android:button="@null"
-                        android:gravity="center"
-                        android:paddingVertical="20dp"
-
-                        android:text="@string/Dyskinesia" />
-
-                    <RadioButton
                         android:id="@+id/notificationOffBtn"
                         style="@style/SemiBold17Black"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="5dp"
-                        android:layout_weight="0.9"
+                        android:layout_weight="1"
                         android:background="@drawable/shape_light_green_stroke"
                         android:button="@null"
                         android:gravity="center"
@@ -103,14 +90,40 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:gravity="center"
                 android:layout_gravity="center">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
+                    android:layout_gravity="start"
+                    android:gravity="center">
+
+                    <CheckBox
+                        android:id="@+id/notificationDyskinesiaBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:button="@drawable/checkbox_selector"
+                        android:gravity="center"
+                        android:padding="5dp" />
+
+                    <TextView
+                        style="@style/SemiBold19Black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:padding="5dp"
+                        android:text="@string/Dyskinesia" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
                     android:gravity="center"
                     android:layout_marginEnd="5dp">
 
@@ -139,9 +152,8 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:layout_marginStart="10dp">
+                    android:layout_gravity="start"
+                    android:gravity="center">
 
                     <CheckBox
                         android:id="@+id/notificationFallsBtn"
