@@ -1,6 +1,5 @@
 package com.example.parkinson.features.notification;
 
-import android.app.NotificationManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -19,28 +18,23 @@ import javax.inject.Inject;
 
 public class NotificationActivity extends AppCompatActivity {
     public ApplicationComponent applicationComponent;
-    private NotificationManager notifManger;
+
     EStatus chosenStatus;
 
     @Inject
     NotificationViewModel notificationViewModel;
 
-    RadioButton onnBtn, offBtn;
+    RadioButton onnBtn, offBtn, dyskinesiaBtn;
     TextView reportBtn;
-    CheckBox isHallucinations, isFalls, isDyskinesia;
+    CheckBox isHallucinations, isFalls;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         ((ParkinsonApplication) getApplicationContext()).appComponent.inject(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_notification);
-        cancelReportNotifaction();
-        initUi();
-    }
 
-    private void cancelReportNotifaction() {
-        notifManger = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        notifManger.cancel(11);
+        initUi();
     }
 
     private void initUi() {
@@ -51,6 +45,7 @@ public class NotificationActivity extends AppCompatActivity {
         reportBtn = findViewById(R.id.notificationReportBtn);
         offBtn = findViewById(R.id.notificationOffBtn);
         onnBtn = findViewById(R.id.notificationOnBtn);
+        dyskinesiaBtn = findViewById(R.id.notificationDyskinesiaBtn);
 
         RadioGroup radioGroup = findViewById(R.id.reportRG);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -60,6 +55,8 @@ public class NotificationActivity extends AppCompatActivity {
                     chosenStatus = EStatus.On;
                 } else if (checkedId == offBtn.getId()) {
                     chosenStatus = EStatus.Off;
+                } else if (checkedId == dyskinesiaBtn.getId()) {
+                    chosenStatus = EStatus.Dyskinesia;
                 }
             }
         });
@@ -73,7 +70,6 @@ public class NotificationActivity extends AppCompatActivity {
 
         isHallucinations = findViewById(R.id.notificationHallucinationsBtn);
         isFalls = findViewById(R.id.notificationFallsBtn);
-        isDyskinesia = findViewById(R.id.notificationDyskinesiaBtn);
     }
 
     private void reportToServer() {
@@ -82,12 +78,17 @@ public class NotificationActivity extends AppCompatActivity {
 
         switch (chosenStatus) {
             case On:
-                notificationViewModel.updateReport(EStatus.On,isDyskinesia.isChecked(), isHallucinations.isChecked(), isFalls.isChecked());
+                notificationViewModel.updateReport(EStatus.On, isHallucinations.isChecked(), isFalls.isChecked());
                 break;
             case Off:
-                notificationViewModel.updateReport(EStatus.Off, isDyskinesia.isChecked(), isHallucinations.isChecked(), isFalls.isChecked());
+                notificationViewModel.updateReport(EStatus.Off, isHallucinations.isChecked(), isFalls.isChecked());
+                break;
+            case Dyskinesia:
+                notificationViewModel.updateReport(EStatus.Dyskinesia, isHallucinations.isChecked(), isFalls.isChecked());
                 break;
         }
+        Intent intentService = new Intent(this, NotifServiceForground.class);
+        startService(intentService);
         onBackPressed();
     }
 

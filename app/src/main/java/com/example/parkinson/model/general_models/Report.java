@@ -5,16 +5,14 @@ import com.example.parkinson.model.enums.EStatus;
 public class Report {
     private Long reportTime;// הזמן שבא נלקחה התרופה , ניתן לשים לב שהזמן מגיע המספר השניות וניתן להמיר אותו ל אובייקט תאריך
     private EStatus status;// מה הסטטוס של המטופל בעת הדיווח
-    private Boolean dyskinesia; //משתנה בוליאני שאומר האם חווה דסקנזיה
     private Boolean hallucinations = false;//משתנה בוליאני שאומר האם חווה הלוקציה
     private Boolean falls = false;//משתנה בוליאני האומר אם חווה נפילות
 
     public Report() { }
 
-    public Report(Long reportTime, EStatus status,Boolean dyskinesia, Boolean hallucinations, Boolean falls) {
+    public Report(Long reportTime, EStatus status, Boolean hallucinations, Boolean falls) {
         this.reportTime = reportTime;
         this.status = status;
-        this.dyskinesia = dyskinesia;
         this.hallucinations = hallucinations;
         this.falls = falls;
     }
@@ -49,13 +47,5 @@ public class Report {
 
     public void setFalls(Boolean withFalls) {
         this.falls = withFalls;
-    }
-
-    public Boolean getDyskinesia() {
-        return dyskinesia;
-    }
-
-    public void setDyskinesia(Boolean dyskinesia) {
-        this.dyskinesia = dyskinesia;
     }
 }

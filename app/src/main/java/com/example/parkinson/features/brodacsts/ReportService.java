@@ -50,7 +50,7 @@ public class ReportService extends Service {
 
 
         notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        notificationManager.notify(11, builder.build());
+        notificationManager.notify(10, builder.build());
         return super.onStartCommand(intent, flags, startId);
     }
 
